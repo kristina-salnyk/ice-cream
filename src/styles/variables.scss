@@ -5,6 +5,7 @@ $hover-transition: .3s cubic-bezier(.4, 0, .2, 1);
 $parallax-transitions: (
         content: transform .75s cubic-bezier(.165, .84, .44, 1),
         heading: transform cubic-bezier(.075, .5, 0, 1) .75s,
+        about: transform cubic-bezier(.075, .5, 0, 1) 1s,
         layerBase: transform cubic-bezier(.165, .84, .44, 1) .1s,
         layerMiddle: transform cubic-bezier(.165, .84, .44, 1) .75s,
         layerFront: transform cubic-bezier(.165, .84, .44, 1) .5s,
@@ -12,6 +13,7 @@ $parallax-transitions: (
 
 $parallax-transformations: (
         heading: translateY(calc(#{var(--scrollTop)} / 2)),
+        about: translateY(calc(#{var(--scrollTop)} / 8)),
         layerBase: translateY(calc(#{var(--scrollTop)} / 1.5)),
         layerMiddle: translateY(calc(#{var(--scrollTop)} / 2.5)),
         layerFront: translateY(calc(#{var(--scrollTop)} / 5.7)),
