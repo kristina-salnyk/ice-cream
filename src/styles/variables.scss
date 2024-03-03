@@ -1,0 +1,51 @@
+$font-family: "Quintessential", serif;
+
+$hover-transition: .3s cubic-bezier(.4, 0, .2, 1);
+
+$parallax-transitions: (
+        content: transform .75s cubic-bezier(.165, .84, .44, 1),
+        heading: transform cubic-bezier(.075, .5, 0, 1) .75s,
+        layerBase: transform cubic-bezier(.165, .84, .44, 1) .1s,
+        layerMiddle: transform cubic-bezier(.165, .84, .44, 1) .75s,
+        layerFront: transform cubic-bezier(.165, .84, .44, 1) .5s,
+);
+
+$parallax-transformations: (
+        heading: translateY(calc(#{var(--scrollTop)} / 2)),
+        layerBase: translateY(calc(#{var(--scrollTop)} / 1.5)),
+        layerMiddle: translateY(calc(#{var(--scrollTop)} / 2.5)),
+        layerFront: translateY(calc(#{var(--scrollTop)} / 5.7)),
+);
+
+$colors: (
+        primary: #fafad2,
+        secondary: #788d64,
+        white: #ffffff,
+        black: #000000,
+);
+
+%background-image-props {
+  background-color: getColor('black');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+%background-layer-props {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@function getParallaxTransition($key) {
+  @return map-get($parallax-transitions, $key);
+}
+
+@function getParallaxTransformation($key) {
+  @return map-get($parallax-transformations, $key);
+}
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}

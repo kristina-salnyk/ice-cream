@@ -1,0 +1,43 @@
+@use '../../styles/variables.scss' as *;
+
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav {
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  transition: opacity $hover-transition;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: getColor('primary');
+  text-decoration: none;
+  transition: color $hover-transition;
+
+  &:hover,
+  &:focus {
+    color: getColor('secondary');
+
+    .logo {
+      opacity: 0.7;
+    }
+  }
+}

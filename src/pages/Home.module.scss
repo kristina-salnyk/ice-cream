@@ -1,0 +1,104 @@
+@use '../styles/variables' as *;
+
+.content {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+}
+
+.sectionContent {
+  position: relative;
+  padding: 20% 0;
+  margin: 0 auto;
+  max-width: 680px;
+  text-align: center;
+  z-index: 1;
+}
+
+.sectionTitle {
+  margin-bottom: 32px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.sectionText {
+  font-size: 20px;
+  text-align: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: calc(calc(1vw + 1vh) * (-4.5));
+  z-index: 10;
+  width: 100%;
+  height: calc(calc(1vw + 1vh) * 10);
+  background-image: url("../../public/images/ground.png");
+  @extend %background-image-props;
+}
+
+.heading {
+  font-family: $font-family;
+  transition: getParallaxTransition('heading');
+  transform: getParallaxTransformation('heading');
+}
+
+.title {
+  font-size: 96px;
+  font-weight: 900;
+}
+
+.subTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.layers {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layerBase {
+  @extend %background-layer-props;
+  background-image: url("../../public/images/layer-base.png");
+  @extend %background-image-props;
+  z-index: 1;
+  transition: getParallaxTransition('layerBase');
+  transform: getParallaxTransformation('layerBase')
+}
+
+.layerMiddle {
+  @extend %background-layer-props;
+  background-image: url("../../public/images/layer-middle.png");
+  @extend %background-image-props;
+  z-index: 3;
+  transition: getParallaxTransition('layerMiddle');
+  transform: getParallaxTransformation('layerMiddle')
+}
+
+.layerFront {
+  @extend %background-layer-props;
+  background-image: url("../../public/images/layer-front.png");
+  @extend %background-image-props;
+  z-index: 3;
+  transition: getParallaxTransition('layerFront');
+  transform: getParallaxTransformation('layerFront')
+}
+
+.layerDungeon {
+  height: 100%;
+  background-image: url("../../public/images/dungeon.jpg");
+  @extend %background-image-props;
+}
+
+
+
